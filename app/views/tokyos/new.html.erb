@@ -1,0 +1,25 @@
+<%= form_for(@tokyo, :url => { controller:'tokyos', action:'create'})do |f| %>
+        <%= f.label :氏名 %>
+        <%= f.text_field :name,size: 40%>
+    <br>
+        <%= f.label :所属Unit %>
+        <%= f.select :unit, 
+        [["Unit1", "Unit1"], 
+        ["Unit2", "Unit2"], 
+        ["Unit3", "Unit3"]], include_blank: "選択して下さい" %>
+    <br>
+        <%= f.label :所属コース %>
+        <%= f.select :course, 
+        [["web", "web"], 
+        ["iphone", "iphone"], 
+        ["game", "game"], 
+        ["python", "python"], 
+        ["AI", "AI"], 
+        ["webEX", "webEX"], 
+        ["UIUX", "UIUX"], 
+        ["VE", "VE"]], include_blank: "選択して下さい" %>
+    <br>
+        <%= f.label :何か一言 %>
+        <%= f.text_field :body,size: 40%>
+        <%= f.submit %>
+<% end %>

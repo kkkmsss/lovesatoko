@@ -1,0 +1,2 @@
+class Tokyo < ApplicationRecord
+end

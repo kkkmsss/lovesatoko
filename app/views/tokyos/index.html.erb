@@ -1,0 +1,16 @@
+<h1>一覧ページ</h1>
+
+▶<%= link_to "新規投稿へ", new_tokyo_path %>
+
+
+<% @tokyos.each do |t| %>
+    <div class="tokyos-container">
+        <h3>氏名</h3>
+            <%= t.name %> 
+        <h3>所属unit</h3>
+            <%= t.unit %>
+        <h3>所属コース</h3>
+        <h3>何か一言</h3>
+            <%= t.body %>
+    </div>
+<% end %>
