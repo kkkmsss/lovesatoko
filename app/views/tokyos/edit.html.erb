@@ -1,5 +1,5 @@
-<%= form_for(@tokyo, :url => { controller:'tokyos', action:'create'})do |f| %>
-        <%= f.label :氏名 %>
+<%= form_for @tokyos do |t| %>
+    <%= f.label :氏名 %>
         <%= f.text_field :name,size: 40%>
     <br>
         <%= f.label :所属Unit %>
@@ -19,12 +19,9 @@
         ["UIUX", "UIUX"], 
         ["VE", "VE"]], include_blank: "選択して下さい" %>
     <br>
-        <%= f.label :受講期 %>
-        <%= f.text_field :lecture,size: 30, placeholder: "半角数字で記入" %>
-    <br>
         <%= f.label :担当メンター %>
         <%= f.text_field :mentor,size: 40%>
-        <%= f.submit %>
+    <%= f.submit "編集する" %>
 <% end %>
 
-<%= link_to "一覧に戻る", tokyos_path %>
+<%= link_to "一覧に戻る", tokyo_path %>

@@ -3,7 +3,7 @@ class CreateTokyos < ActiveRecord::Migration[6.1]
     create_table :tokyos do |t|
       t.string :name
       t.integer :unit
-      t.text :body
+      t.string :mentor
 
       t.timestamps
     end

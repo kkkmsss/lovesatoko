@@ -1,3 +1,34 @@
 // Place all the styles related to the tokyos controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.tokyos-container {
+    height:80px;
+    padding-top: 1em;
+    margin: 2em 0;
+    color: rgb(244, 106, 119);;
+    background: #ffebe9;
+    border-top: solid 10px rgb(244, 106, 119);;
+    display:flex;
+    justify-content: space-between;
+}
+
+.tokyos-container p{
+    color: black;
+}
+
+.column{
+    text-align: center;
+    width:17%;
+}
+
+.tokyo input{
+    width:100px;
+    height:25px;
+    font-size: 15px;
+    border-radius: 30%;
+}
+
+.column a{
+    text-decoration: none;
+}

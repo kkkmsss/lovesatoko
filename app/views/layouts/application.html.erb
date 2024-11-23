@@ -5,18 +5,22 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <script src="https://kit.fontawesome.com/c1b1cd6975.js" crossorigin="anonymous"></script>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     <header>
-      <h1>GeekSalon Tokyo</h1>
+      <h1><%= link_to "GeekSalon Tokyo", tokyos_path %></h1>
       <div class= "user">
-        <%= link_to "ログイン", tokyos_path %>
-        <%= link_to "新規登録", new_user_registration_path %>
+        <% if user_signed_in? %>
+          <%= button_to "ログアウト", destroy_user_session_path, method: :delete %>
+        <% else %>
+          <%= link_to "ログイン", tokyos_path %>
+          <%= link_to "新規登録", new_user_registration_path %>
+        <% end %>
       </div>
-      </header>
-    <%= yield %>
+    </header>
+    <%= yield %
   </body>
 </html>

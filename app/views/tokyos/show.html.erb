@@ -1,0 +1,34 @@
+<div class="tokyo">
+    <h1>投稿詳細</h1>
+    <br>
+    <br>
+    <h3>氏名</h3>
+        <p><%= @tokyo.name %></p>
+    <h3>所属unit</h3>
+        <p><%= @tokyo.unit %></p>
+    <h3>所属コース</h3>
+    <h3>担当メンター</h3>
+        <p><%= @tokyo.mentor %></p>
+    <br>
+    <% if user_signed_in? %>
+        <% if current_user.already_liked?(@tokyo) %>
+            <%= link_to tokyo_like_path(@tokyo), method: :delete do %>
+                <span>💖<%= t.likes.count %></span>
+            <% end %>
+        <% else %>
+            <%= link_to tokyo_likes_path(@tokyo), method: :post do %>
+                <span>💖<%= t.likes.count %></span>
+            <% end %>
+        <% end %>
+    <% else %>
+        <span>💖<%= t.likes.count %></span>
+    <% end %>
+    <br>
+    <%= link_to "編集する", edit_tokyo_path(@tokyo.id) %>
+    &nbsp;
+    &nbsp;
+    <%= link_to "一覧に戻る", tokyos_path %>
+    &nbsp;
+    &nbsp;
+    <%= button_to "削除する", tokyo_path(@tokyo.id), method: :delete %>
+</div>
